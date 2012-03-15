@@ -1,4 +1,4 @@
-# Scriptaculous
+# Scriptaculous.vim
 
 This is a initial commit for the Scriptaculous Test plugin.
 
