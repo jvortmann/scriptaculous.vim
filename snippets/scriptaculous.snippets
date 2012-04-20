@@ -8,20 +8,20 @@ snippet test
 		${2}
 	});${3}
 # It should
-snippet i [it] 'should ...': functino() { ... },
+snippet i [it] 'should ...': function() { ... },
 	'should ${1:do something}': function() {
 		${2}
 	},${3}
-snippet it 'should ...': functino() { ... },
+snippet it 'should ...': function() { ... },
 	'should ${1:do something}': function() {
 		${2}
 	},${3}
 
-snippet i [ite] 'should ...': functino() { assertEqual(..., ...); },
+snippet i [ite] 'should ...': function() { assertEqual(expected, actual); },
 	'should ${1:do something}': function() {
 		assertEqual(${2:expected}, ${3:actual});
 	},${4}
-snippet ite 'should ...': functino() { assertEqual(..., ...); },
+snippet ite 'should ...': function() { assertEqual(expected, actual); },
 	'should ${1:do something}': function() {
 		assertEqual(${2:expected}, ${3:actual});
 	},${4}
@@ -75,13 +75,13 @@ snippet teardown
 	},
 
 # Assert
-snippet a [assert] assert...(..., ...);...
+snippet a [assert] assert...(expected, actual);...
 	assert${1:what}(${2:expected}, ${3:actual});${4}
 snippet assert
 	assert${1:what}(${2:expected}, ${3:actual});${4}
 
 # Assert Equal
-snippet a [ae, assertequal] assertEqual(..., ...);...
+snippet a [ae, assertequal] assertEqual(expected, actual);...
 	assertEqual(${1:expected}, ${2:actual});${3}
 snippet ae
 	assertEqual(${1:expected}, ${2:actual});${3}
@@ -89,7 +89,7 @@ snippet assertequal
 	assertEqual(${1:expected}, ${2:actual});${3}
 
 # Assert NotEqual
-snippet a [ane, assertnotequal] assertNotEqual(..., ...);...
+snippet a [ane, assertnotequal] assertNotEqual(expected, actual);...
 	assertNotEqual(${1:expected}, ${2:actual});${3}
 snippet ane
 	assertNotEqual(${1:expected}, ${2:actual});${3}
@@ -97,7 +97,7 @@ snippet assertnotequal
 	assertNotEqual(${1:expected}, ${2:actual});${3}
 
 # Assert Inspect
-snippet a [ai, assertinspect] assertInspect(..., ...);...
+snippet a [ai, assertinspect] assertInspect(expected, actual);...
 	assertInspect(${1:expected}, ${2:actual});${3}
 snippet ai
 	assertInspect(${1:expected}, ${2:actual});${3}
@@ -105,7 +105,7 @@ snippet assertinspect
 	assertInspect(${1:expected}, ${2:actual});${3}
 
 # Assert EnumEqual
-snippet a [aee, assertenumequal] assertEnumEqual(..., ...);...
+snippet a [aee, assertenumequal] assertEnumEqual(expected, actual);...
 	assertEnumEqual(${1:expected}, ${2:actual});${3}
 snippet aee
 	assertEnumEqual(${1:expected}, ${2:actual});${3}
@@ -113,7 +113,7 @@ snippet assertenumequal
 	assertEnumEqual(${1:expected}, ${2:actual});${3}
 
 # Assert Identical
-snippet a [aid, assertidentical] assertIdentical(..., ...);...
+snippet a [aid, assertidentical] assertIdentical(expected, actual);...
 	assertIdentical(${1:expected}, ${2:actual});${3}
 snippet aid
 	assertIdentical(${1:expected}, ${2:actual});${3}
@@ -121,7 +121,7 @@ snippet assertidentical
 	assertIdentical(${1:expected}, ${2:actual});${3}
 
 # Assert NotIdentical
-snippet a [anid, assertnotidentical] assertNotIdentical(..., ...);...
+snippet a [anid, assertnotidentical] assertNotIdentical(expected, actual);...
 	assertNotIdentical(${1:expected}, ${2:actual});${3}
 snippet anid
 	assertNotIdentical(${1:expected}, ${2:actual});${3}
@@ -129,7 +129,7 @@ snippet assertnotidentical
 	assertNotIdentical(${1:expected}, ${2:actual});${3}
 
 # Assert Null
-snippet a [an, assertnull] assertNull(...);...
+snippet a [an, assertnull] assertNull(element);...
 	assertNull(${1:obj});${2}
 snippet an
 	assertNull(${1:obj});${2}
@@ -137,7 +137,7 @@ snippet assertnull
 	assertNull(${1:obj});${2}
 
 # Assert NotNull
-snippet a [ann, assertnotnull] assertNotNull(...);...
+snippet a [ann, assertnotnull] assertNotNull(element);...
 	assertNotNull(${1:obj});${2}
 snippet ann
 	assertNotNull(${1:obj});${2}
@@ -145,7 +145,7 @@ snippet assertnotnull
 	assertNotNull(${1:obj});${2}
 
 # Assert Match
-snippet a [am, assertmatch] assertMatch(..., ...);...
+snippet a [am, assertmatch] assertMatch(expected, actual);...
 	assertMatch(${1:expected}, ${2:actual});${3}
 snippet am
 	assertMatch(${1:expected}, ${2:actual});${3}
@@ -153,7 +153,7 @@ snippet assertmatch
 	assertMatch(${1:expected}, ${2:actual});${3}
 
 # Assert NotMatch
-snippet a [anm, assertnotmatch] assertNotMatch(..., ...);...
+snippet a [anm, assertnotmatch] assertNotMatch(expected, actual);...
 	assertNotMatch(${1:expected}, ${2:actual});${3}
 snippet anm
 	assertNotMatch(${1:expected}, ${2:actual});${3}
@@ -161,7 +161,7 @@ snippet assertnotmatch
 	assertNotMatch(${1:expected}, ${2:actual});${3}
 
 # Assert Not Empty
-snippet a [anemp, assertnotempty] assertNotEmpty(...);...
+snippet a [anemp, assertnotempty] assertNotEmpty(element);...
 	assertNotEmpty(${1:array});${2}
 snippet anemp
 	assertNotEmpty(${1:array});${2}
@@ -169,7 +169,7 @@ snippet assertnotempty
 	assertNotEmpty(${1:array});${2}
 
 # Assert True
-snippet a [at, asserttrue] assertTrue(...);...
+snippet a [at, asserttrue] assertTrue(value);...
 	assertTrue(${1:value});${2}
 snippet at
 	assertTrue(${1:value});${2}
@@ -177,7 +177,7 @@ snippet asserttrue
 	assertTrue(${1:value});${2}
 
 # Assert False
-snippet a [af, assertfalse] assertFalse(...);...
+snippet a [af, assertfalse] assertFalse(value);...
 	assertFalse(${1:value});${2}
 snippet af
 	assertFalse(${1:value});${2}
@@ -185,7 +185,7 @@ snippet assertfalse
 	assertFalse(${1:value});${2}
 
 # Assert Type
-snippet a [atp, asserttype] assertType(..., ...);...
+snippet a [atp, asserttype] assertType(expected, actual);...
 	assertType(${1:expected}, ${2:actual});${3}
 snippet atp
 	assertType(${1:expected}, ${2:actual});${3}
@@ -193,7 +193,7 @@ snippet asserttype
 	assertType(${1:expected}, ${2:actual});${3}
 
 # Assert NotOfType
-snippet a [antp, assertnottype, assertnotoftype] assertNotOfType(..., ...);...
+snippet a [antp, assertnottype, assertnotoftype] assertNotOfType(expected, actual);...
 	assertNotOfType(${1:expected}, ${2:actual});${3}
 snippet antp
 	assertNotOfType(${1:expected}, ${2:actual});${3}
@@ -203,7 +203,7 @@ snippet assertnotoftype
 	assertNotOfType(${1:expected}, ${2:actual});${3}
 
 # Assert InstanceOf
-snippet a [ain, assertinstance, assertinstanceof] assertInstanceOf(..., ...);...
+snippet a [ain, assertinstance, assertinstanceof] assertInstanceOf(expected, actual);...
 	assertInstanceOf(${1:expected}, ${2:actual});${3}
 snippet ain
 	assertInstanceOf(${1:expected}, ${2:actual});${3}
@@ -213,7 +213,7 @@ snippet assertinstanceof
 	assertInstanceOf(${1:expected}, ${2:actual});${3}
 
 # Assert InstanceNotOf
-snippet a [anin, assertnotinstance, assertnotinstanceof] assertNotInstanceOf(..., ...);...
+snippet a [anin, assertnotinstance, assertnotinstanceof] assertNotInstanceOf(expected, actual);...
 	assertNotInstanceOf(${1:expected}, ${2:actual});${3}
 snippet anin
 	assertNotInstanceOf(${1:expected}, ${2:actual});${3}
@@ -223,7 +223,7 @@ snippet assertnotinstanceof
 	assertNotInstanceOf(${1:expected}, ${2:actual});${3}
 
 # Assert RespondsTo
-snippet a [ar, assertresponds, assertrespondsto] assertRespondsTo(..., ...);...
+snippet a [ar, assertresponds, assertrespondsto] assertRespondsTo(expected, actual);...
 	assertRespondsTo(${1:method}, ${2:obj});${3}
 snippet ar
 	assertRespondsTo(${1:method}, ${2:obj});${3}
@@ -233,7 +233,7 @@ snippet assertrespondsto
 	assertRespondsTo(${1:method}, ${2:obj});${3}
 
 # Assert ReturnsTrue
-snippet a [art, assertreturnstrue] assertReturnsTrue(..., ...);...
+snippet a [art, assertreturnstrue] assertReturnsTrue(expected, actual);...
 	assertReturnsTrue(${1:method}, ${2:obj});${3}
 snippet art
 	assertReturnsTrue(${1:method}, ${2:obj});${3}
@@ -241,7 +241,7 @@ snippet assertreturnstrue
 	assertReturnsTrue(${1:method}, ${2:obj});${3}
 
 # Assert ReturnsFalse
-snippet a [arf, assertreturnsfalse] assertReturnsFalse(..., ...);...
+snippet a [arf, assertreturnsfalse] assertReturnsFalse(expected, actual);...
 	assertReturnsFalse(${1:method}, ${2:obj});${3}
 snippet arf
 	assertReturnsFalse(${1:method}, ${2:obj});${3}
@@ -249,7 +249,7 @@ snippet assertreturnsfalse
 	assertReturnsFalse(${1:method}, ${2:obj});${3}
 
 # Assert Raise
-snippet a [ars, assertraise] assertRaise(..., ...);...
+snippet a [ars, assertraise] assertRaise(expected, actual);...
 	assertRaise(${1:exceptionName}, ${2:method});${3}
 snippet ars
 	assertRaise(${1:exceptionName}, ${2:method});${3}
@@ -257,7 +257,7 @@ snippet assertraise
 	assertRaise(${1:exceptionName}, ${2:method});${3}
 
 # Assert Element Matches
-snippet a [aem, assertelementmatches] assertElementMatches(..., ...);...
+snippet a [aem, assertelementmatches] assertElementMatches(expected, actual);...
 	assertElementMatches(${1:element}, ${2:expression});${3}
 snippet aem
 	assertElementMatches(${1:element}, ${2:expression});${3}
@@ -265,7 +265,7 @@ snippet assertelementmatches
 	assertElementMatches(${1:element}, ${2:expression});${3}
 
 # Assert Hidden
-snippet a [ah, asserthidden] assertHidden(...);...
+snippet a [ah, asserthidden] assertHidden(element);...
 	assertHidden(${1:element});${2}
 snippet ah
 	assertHidden(${1:element});${2}
@@ -273,7 +273,7 @@ snippet asserthidden
 	assertHidden(${1:element});${2}
 
 # Assert Visible
-snippet a [av, assertvisible] assertVisible(...);...
+snippet a [av, assertvisible] assertVisible(element);...
 	assertVisible(${1:element});${2}
 snippet av
 	assertVisible(${1:element});${2}
@@ -281,7 +281,7 @@ snippet assertvisible
 	assertVisible(${1:element});${2}
 
 # Assert NotVisible
-snippet a [anv, assertnotvisible] assertNotVisible(...);...
+snippet a [anv, assertnotvisible] assertNotVisible(element);...
 	assertNotVisible(${1:element});${2}
 snippet anv
 	assertNotVisible(${1:element});${2}
